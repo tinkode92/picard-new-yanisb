@@ -8,6 +8,7 @@
 return [
     false, // $matchHost
     [ // $staticRoutes
+        '/cart/add' => [[['_route' => 'cart_add', '_controller' => 'App\\Controller\\CartController::addProductToCart'], null, ['POST' => 0], null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'

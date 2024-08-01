@@ -9,7 +9,6 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Metadata\ApiResource;
 
-
 #[ORM\Entity(repositoryClass: ProductRepository::class)]
 #[ApiResource]
 class Product
@@ -27,6 +26,9 @@ class Product
 
     #[ORM\Column(type: Types::TEXT)]
     private ?string $Description = null;
+
+    #[ORM\Column]
+    private ?float $price = null; // Ajout de la propriété price
 
     #[ORM\Column]
     private ?int $Grade = null;
@@ -82,6 +84,18 @@ class Product
     public function setDescription(string $Description): static
     {
         $this->Description = $Description;
+
+        return $this;
+    }
+
+    public function getPrice(): ?float
+    {
+        return $this->price;
+    }
+
+    public function setPrice(float $price): static
+    {
+        $this->price = $price;
 
         return $this;
     }

@@ -1,5 +1,8 @@
 controllers:
-    resource:
-        path: ../src/Controller/
-        namespace: App\Controller
+    resource: ../src/Controller/
     type: attribute
+
+cart_add:
+    path: /cart/add
+    controller: App\Controller\CartController::addProductToCart
+    methods: POST
