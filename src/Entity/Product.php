@@ -39,7 +39,7 @@ class Product
     /**
      * @var Collection<int, OrderProduct>
      */
-    #[ORM\OneToMany(targetEntity: OrderProduct::class, mappedBy: 'Product')]
+    #[ORM\OneToMany(targetEntity: OrderProduct::class, mappedBy: 'product')]
     private Collection $orderProducts;
 
     public function __construct()
